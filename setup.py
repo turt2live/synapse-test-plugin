@@ -4,5 +4,5 @@ setup(
     name="synapse_test_plugin",
     version="0.0.1",
     description="A test plugin for synapse",
-    packages=find_packages("test"),
+    packages=find_packages("synapse_test_plugin"),
 )
