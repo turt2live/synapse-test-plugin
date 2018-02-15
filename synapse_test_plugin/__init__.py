@@ -12,7 +12,7 @@ class TestPlugin(object):
                 "sender": event['creator'],
                 "content": {
                     "msgtype": "m.notice",
-                    "body": "[Test Plugin] Alias " + event['room_alias'] + " created on this room (" + event['room_id'] + ") with servers: " + event['servers'],
+                    "body": "[Test Plugin] Alias " + event['room_alias'].to_string() + " created on this room",
                 }
             }
         )
