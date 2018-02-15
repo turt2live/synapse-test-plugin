@@ -1,6 +1,3 @@
-import logging
-
-
 class TestPlugin(object):
     def __init__(self, config, api):
         self._config = config
