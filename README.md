@@ -11,6 +11,6 @@ Add this to your synapse homeserver.yaml:
 
 ```yaml
 internal_api_plugins:
-- module: "synapse_test_plugin.test_plugin.TestPlugin"
+- module: synapse_test_plugin.test.TestPlugin
   config: {}
 ```
