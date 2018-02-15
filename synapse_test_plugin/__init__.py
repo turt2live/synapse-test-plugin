@@ -7,7 +7,18 @@ class TestPlugin(object):
         self._api = api
 
     def on_room_directory_association_created(self, event):
-        logging.info("A room alias was associated with a room", event)
+        self._api.hs.get_event_creation_handler().create_and_send_nonmember_event(
+            event['creator'],
+            {
+                "type": "m.room.message",
+                "room_id": event['room_id'],
+                "sender": event['creator'],
+                "content": {
+                    "msgtype": "m.notice",
+                    "body": "[Test Plugin] Alias " + event['room_alias'] + " created on this room (" + event['room_id'] + ") with servers: " + event['servers'],
+                }
+            }
+        )
 
     @staticmethod
     def parse_config(config):
