@@ -8,3 +8,7 @@ class TestPlugin(object):
 
     def on_room_directory_association_created(self, event):
         logging.info("A room alias was associated with a room", event)
+
+    @staticmethod
+    def parse_config(config):
+        return config
